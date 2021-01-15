@@ -83,7 +83,7 @@ export function sumArrayWithThreeNumbers(sumArr) {
     let valueOne = sumArr[0];
     let valueTwo = sumArr[1];
     let valueThree = sumArr[2];
-    let sumOfThree = sum(valueOne, sum(valueTwo, valueThree)[0])[0];
+    let sumOfThree = sumAndMultiplyThreeNumbers(valueOne, valueTwo, valueThree)[0];
     let string = `${valueOne},${valueTwo},${valueThree} was passed in as an array of numbers, and ${sumOfThree} is their sum.`;
     let newArray = [sumOfThree, string];
     return newArray;
@@ -109,8 +109,13 @@ you may continue to use the + operator for string concatenation.
 */
 
 export function multiplyArrayWithThreeNumbers(multArr) {
-    // let productOfThree = multiply(sumArr[0], multiply(sumArr[0], sumArr[0])[0])[0];
-
+    let valueOne = multArr[0];
+    let valueTwo = multArr[1];
+    let valueThree = multArr[2];
+    let productOfThree = sumAndMultiplyThreeNumbers(valueOne, valueTwo, valueThree)[1];
+    let string = `The numbers ${valueOne},${valueTwo},${valueThree} have a product of ${productOfThree}.`;
+    let newArray = [productOfThree, string];
+    return newArray;
 }
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
