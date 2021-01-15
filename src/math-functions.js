@@ -12,8 +12,8 @@ example and uses the values that were input into the function:
 */
 
 export function sum(a, b) {
-    let someArray;
-    return someArray = [a + b, `The sum of ${a} and ${b} is ${a + b}.`];
+    let someArray = [a + b, `The sum of ${a} and ${b} is ${a + b}.`];
+    return someArray;
 }
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
@@ -27,8 +27,8 @@ Write a function called multiply() that takes in two numbers as arguments and re
 */
 
 export function multiply(a, b) {
-    let someArray;
-    return someArray = [a * b, `The product of ${a} and ${b} is ${a * b}.`];
+    let someArray = [a * b, `The product of ${a} and ${b} is ${a * b}.`];
+    return someArray;
 }
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
@@ -53,10 +53,12 @@ how to do this. However, you may continue to use the + operator for string conca
 */
 
 export function sumAndMultiplyThreeNumbers(a, b, c) { 
-    let sum1 = sum(a, sum(b, c)[0])[0];
-    let product = multiply(a, multiply(b, c)[0])[0];
-    let newArray;
-    return newArray = [sum1, product, `${a} and ${b} and ${c} sum to ${sum1}.`, `The product of ${a} and ${b} and ${c} is ${product}.`];
+    let sumOfThree = sum(a, sum(b, c)[0])[0];
+    let productOfThree = multiply(a, multiply(b, c)[0])[0];
+    let sumString = `${a} and ${b} and ${c} sum to ${sumOfThree}.`;
+    let productString = `The product of ${a} and ${b} and ${c} is ${productOfThree}.`;
+    let newArray = [sumOfThree, productOfThree, sumString, productString];
+    return newArray;
 }
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
@@ -78,7 +80,13 @@ to use the + operator for string concatenation.
 */
 
 export function sumArrayWithThreeNumbers(sumArr) {
-
+    let valueOne = sumArr[0];
+    let valueTwo = sumArr[1];
+    let valueThree = sumArr[2];
+    let sumOfThree = sum(valueOne, sum(valueTwo, valueThree)[0])[0];
+    let string = `${valueOne},${valueTwo},${valueThree} was passed in as an array of numbers, and ${sumOfThree} is their sum.`;
+    let newArray = [sumOfThree, string];
+    return newArray;
 }
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
@@ -100,7 +108,8 @@ This function should handle an array containing three elements. However,
 you may continue to use the + operator for string concatenation.
 */
 
-export function multiplyArrayWithThreeNumbers(multArr) { //eslint-disable-line
+export function multiplyArrayWithThreeNumbers(multArr) {
+    // let productOfThree = multiply(sumArr[0], multiply(sumArr[0], sumArr[0])[0])[0];
 
 }
 
