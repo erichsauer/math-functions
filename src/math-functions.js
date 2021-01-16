@@ -84,7 +84,7 @@ export function sumArrayWithThreeNumbers(sumArr) {
     let valueTwo = sumArr[1];
     let valueThree = sumArr[2];
     let sumOfThree = sumAndMultiplyThreeNumbers(valueOne, valueTwo, valueThree)[0];
-    let string = `${valueOne},${valueTwo},${valueThree} was passed in as an array of numbers, and ${sumOfThree} is their sum.`;
+    let string = `${sumArr} was passed in as an array of numbers, and ${sumOfThree} is their sum.`;
     let newArray = [sumOfThree, string];
     return newArray;
 }
@@ -113,7 +113,7 @@ export function multiplyArrayWithThreeNumbers(multArr) {
     let valueTwo = multArr[1];
     let valueThree = multArr[2];
     let productOfThree = sumAndMultiplyThreeNumbers(valueOne, valueTwo, valueThree)[1];
-    let string = `The numbers ${valueOne},${valueTwo},${valueThree} have a product of ${productOfThree}.`;
+    let string = `The numbers ${multArr} have a product of ${productOfThree}.`;
     let newArray = [productOfThree, string];
     return newArray;
 }
@@ -137,13 +137,12 @@ This function should be dynamic, accepting an array of any length.
 
 export function multiplyAnyArray(dynamicArray) {
     let product = 1;
-    let numberString = dynamicArray.toString();
 
     for(const arrayItem of dynamicArray) {
         product = multiply(product, arrayItem)[0];
     }
 
-    let string = `The numbers ${numberString} have a product of ${product}.`;
+    let string = `The numbers ${dynamicArray} have a product of ${product}.`;
     let newArray = [product, string];
     return newArray;
 }
